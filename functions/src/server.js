@@ -14,9 +14,9 @@ function configureServer() {
     resolvers
   });
 
-  // now we take our newly instantiated ApolloServer and apply the previously configured express application
   server.applyMiddleware({ app });
 
   return app;
 }
+
 module.exports = configureServer;

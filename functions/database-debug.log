@@ -1,0 +1,13 @@
+11:27:42.624 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+11:27:42.768 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+11:29:07.087 [NamespaceSystem-akka.actor.default-dispatcher-3] INFO akka.actor.CoordinatedShutdown - Starting coordinated shutdown from JVM shutdown hook
+11:29:07.091 [Thread-2] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+Exception in thread "Thread-2" java.lang.IllegalStateException: cannot create children while terminating or terminated
+	at akka.actor.dungeon.Children.makeChild(Children.scala:270)
+	at akka.actor.dungeon.Children.attachChild(Children.scala:46)
+	at akka.actor.dungeon.Children.attachChild$(Children.scala:45)
+	at akka.actor.ActorCell.attachChild(ActorCell.scala:370)
+	at akka.actor.ActorSystemImpl.actorOf(ActorSystem.scala:722)
+	at com.firebase.core.namespace.Terminator$.terminate(Terminator.scala:25)
+	at com.firebase.core.namespace.NamespaceActorSystem.shutdown(NamespaceActorSystem.scala:490)
+	at com.firebase.server.forge.App$$anon$3.run(App.scala:275)
